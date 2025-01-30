@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank you</title>
+    <link rel="stylesheet" href="css/lastpage.css" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="thankyou"><b>Thank you babe🤗💓</b></div>
+    
+    <!-- Digital Love Letter with Typing Animation -->
+
+    <div id="loveLetterContainer">
+      <!-- <h2>💖</h2> -->
+      <p id="loveLetter"></p>
+    </div>
+
+    <!-- Countdown to Valentine's Date -->
+    <div id="countdownContainer">
+      <h2>I'm Counting down the days to our special day (literally lol🤭)</h2>
+      <div id="countdown"></div>
+    </div>
+
+    <!-- Your Rizz GIF and Audio -->
+    <img id="rizz" src="rizz.gif" alt="rizzler god" class="responsive" />
+    <br />
+    <audio controls autoplay loop>
+      <source src="Mwanjury.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <h1>Don't go yet!</h1>
+    <button class="button" onclick="location.href='lastpage.html'">
+      🫶
+    </button>
+
+    <script>
+      // Digital Love Letter Typing Animation
+      const loveMessage = "No story is complete without its next chapter. I imagine the next page unfolding with your smile, your hand in mine, some rainy days and the kind of moments that make time stand still. So until I see you and embrace you in my arms again, I’ll keep the pen ready, my heart eager and my love for you growing with every day that passes. I can’t wait to see you and write the next one together with you, Mwanjury💘";
+      let loveIndex = 0;
+
+      function typeWriter() {
+        if (loveIndex < loveMessage.length) {
+          document.getElementById("loveLetter").innerHTML += loveMessage.charAt(loveIndex);
+          loveIndex++;
+          setTimeout(typeWriter, 50);
+        }
+      }
+      typeWriter();
+
+      // Countdown to Valentine's Date
+      var countDownDate = new Date("Feb 14, 2025 00:00:00").getTime();
+
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+        document.getElementById("countdown").innerHTML = days + " days left...";
+
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML = "It's Valentine's Day! 💖";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
+
